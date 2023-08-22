@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Invoice Template Design</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <style>
+    div.col_pro {
+      white-space: wrap;
+      width: 25%;
+      overflow: hidden;
+      text-align: center;
+      margin: 0 30px 0 20px;
+      text-overflow: ellipsis;
+    }
+
+    #due_date{
+        color: red;
+    }
+    /* div.col_pro{
+        overflow: visible;
+    } */
+
+    /* Styles for devices with a maximum width of 320px (e.g., small smartphones) */
+    @media (max-width: 320px) {
+      .invoice_wrapper {
+        width: 100%;
+      }
+      .sub_rupee,
+      .grand_rupee {
+        width: 500px;
+      }
+      #payment_section,
+      .payment_description,
+      .ft_description {
+        position: static;
+      }
+      .ft_description,
+      .sub_rupee,
+      .grand_rupee,
+      .payment_description,
+      .address {
+        word-wrap: break-word;
+      }
+      .col_pro p {
+        font-size: 10px;
+        width: auto;
+        align-items: center;
+      }
+      .col_net {
+        margin: 9px;
+      }
+      #new_rate {
+        margin: 0 !important;
+      }
+    }
+
+    /* Styles for devices with a width between 321px and 768px (e.g., larger smartphones and small tablets) */
+    @media (min-width: 321px) and (max-width: 768px) {
+      .invoice_wrapper {
+        width: 100%;
+      }
+      .sub_rupee,
+      .grand_rupee {
+        width: 450px;
+      }
+
+      #payment_section,
+      .payment_description,
+      .ft_description {
+        position: static;
+      }
+      .ft_description,
+      .sub_rupee,
+      .grand_rupee,
+      .payment_description {
+        word-wrap: break-word;
+      }
+      .col_pro p {
+        font-size: 10px;
+        width: auto;
+        align-items: center;
+      }
+      #new_rate {
+        margin: 0 !important;
+      }
+      .col_net {
+        margin: 8px;
+      }
+    }
+/* Design CSS Merging-START */
+
+/* Design CSS Merging-END */
+
+    /* Styles for devices with a width between 769px and 1024px (e.g., tablets and small laptops) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .invoice_wrapper {
+        width: 100%;
+      }
+      .sub_rupee,
+      .grand_rupee {
+        width: 400px;
+      }
+
+      #payment_section,
+      .payment_description,
+      .ft_description {
+        position: static;
+      }
+      .ft_description,
+      .sub_rupee,
+      .grand_rupee,
+      .payment_description {
+        word-wrap: break-word;
+      }
+      .col_pro p {
+        font-size: 12px;
+        width: auto;
+        align-items: center;
+      }
+    }
+
+    /* Styles for devices with a width between 1025px and 1440px (e.g., larger laptops and desktops) */
+    @media (min-width: 1025px) and (max-width: 1440px) {
+      .invoice_wrapper {
+        width: 100%;
+      }
+      #payment_section,
+      .payment_description,
+      .ft_description {
+        position: static;
+      }
+      .ft_description,
+      .sub_rupee,
+      .grand_rupee,
+      .payment_description {
+        word-wrap: break-word;
+      }
+      .col_pro p {
+        font-size: 14px;
+        width: auto;
+        align-items: center;
+      }
+    }
+
+    /* Styles for devices with a width above 1440px (e.g., larger desktop monitors) */
+    @media (min-width: 1441px) {
+      .invoice_wrapper {
+        width: 100%;
+      }
+      #payment_section,
+      .payment_description,
+      .ft_description {
+        position: static;
+      }
+      .ft_description,
+      .sub_rupee,
+      .grand_rupee,
+      .payment_description {
+        word-wrap: break-word;
+      }
+    }
+
+  </style>
+  <body>
+    <div class="wrapper">
+      <div class="invoice_wrapper">
+        <div class="header">
+          <div class="logo_invoice_wrap">
+            <div class="logo_sec">
+              <img
+                src="ReevolLeftMenu.png"
+                alt="code logo"
+                height="50"
+                width="100"
+              />
+            </div>
+            <div class="invoice_sec">
+              <p class="invoice bold">ORDER SUMMARY</p>
+              <p class="invoice_no">
+                <span class="bold">Order ID</span>
+                <span>#348873254785459</span>
+              </p>
+              <p class="date">
+                <span class="bold">Date</span>
+                <span>18 AUG 2023</span>
+              </p>
+              <p class="date">
+                <span class="bold">GSTIN</span>
+                <span>1234567890786786786555</span>
+              </p>
+              <p class="date" id="due_date">
+                <span class="bold">Payment Status</span>
+                <span>Paid</span>
+              </p>
+            </div>
+          </div>
+          <div class="bill_total_wrap">
+            <div class="bill_sec address">
+              <p class="bold">Shipping Address</p>
+              <p class="bold name">Alex Deo</p>
+              <span>+111 222345667 </span><br />
+              <span type="mailto" class="bold">alexDio777@gmail.com</span><br />
+              <span>
+                2HRC+C99, Bhavishya Nidhi Bhavan,near, Ashram Rd, Near Income
+                Tax Circle, Usmanpura, Ahmedabad, Gujarat 380014
+              </span>
+            </div>
+          </div>
+          <div class="body">
+            <div class="main_table">
+              <div class="table_header">
+                <div class="row">
+                  <div class="col col_no">NO.</div>
+                  <div class="col col_prod">PRODUCT NAME</div>
+                  <div class="col col_pri">UNIT PRICE</div>
+                  <div class="col col_unit">UNIT SIZE</div>
+                  <div class="col col_pack">PACK SIZE</div>
+                  <div class="col col_qty">QTY</div>
+                  <div class="col col_net" id="new_rate">NET RATE</div>
+                </div>
+              </div>
+              <div class="table_body">
+                <div class="row">
+                  <div class="col col_no">
+                    <p>01</p>
+                  </div>
+                  <div class="col col_pro">
+                    <p class="bold" style="text-overflow: ellipsis">
+                      Web Design
+                    </p>
+                  </div>
+                  <div class="col col_pri">
+                    <p>568975</p>
+                  </div>
+                  <div class="col col_unit">
+                    <p>300</p>
+                  </div>
+                  <div class="col col_pack">
+                    <p>200</p>
+                  </div>
+                  <div class="col col_qty">
+                    <p>676</p>
+                  </div>
+                  <div class="col col_net">
+                    <p>6000000000</p>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="paymethod_grandtotal_wrap payment_section">
+              <div class="paymethod_sec payment_description">
+                <p class="bold">Payment Method</p>
+                <p>Visa, master Card and We accept Cheque</p>
+              </div>
+              <div class="grandtotal_sec">
+                <p class="bold">
+                  <span>SUB TOTAL</span>
+                  <span class="sub_rupee">₹750087654674567</span>
+                </p>
+                <p>
+                  <span>Discount 10%</span>
+                  <span>-₹700</span>
+                </p>
+                <p class="bold">
+                  <span>Total Amount</span>
+                  <span class="grand_rupee">₹6800234563456</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="footer ft_description">
+            This is not an invoice; it is simply an informational order summary.
+            The actual invoice will be sent to you.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
